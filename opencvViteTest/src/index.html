@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>OpenCV Image Processing</title>
+  </head>
+  <body>
+    <h1>OpenCV Image Processing</h1>
+    <form action="/process_image" method="post" enctype="multipart/form-data">
+      <div class="camera">
+        <video id="video">Video stream not available.</video>
+      </div>
+      <canvas id="canvas"> </canvas>
+      <div class="output">
+        <button id="startvideo">Use webcam</button>
+        <button id="startbutton">Take photo</button>
+        <button id="endbutton">Delete Photo</button>
+        <!-- <img id="photo" alt="The screen capture will appear in this box." /> -->
+      </div>
+      <h2 style="margin-top: 20px">OR</h2>
+      <input
+        id="inputfilename"
+        type="file"
+        name="image"
+        accept=".jpg, .png"
+        required
+      /><br />
+      <select name="iselect" id="select-method">
+        <option value="default-option">Default</option>
+        <option value="red-option">Choose red channel</option>
+        <option value="green-option">Choose green channel</option>
+        <option value="blue-option">Choose blue channel</option>
+        <option value="crop-option">Crop the image</option>
+        <option value="rotate-option">Rotate the image</option>
+        <option value="draw-option">Draw a rectangle</option>
+      </select>
+      <input type="submit" value="Submit" id="submit" />
+    </form>
+    <div id="resultContainer"></div>
+    <button id="delete-photo">Delete Result</button>
+    <script src="./index.js"></script>
+  </body>
+</html>
